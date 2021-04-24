@@ -22,7 +22,7 @@ function Pop(arr,top){
         console.log("don't have any data in this list")
     }
 }
-var inp = "remove"
+var inp = "add"
 if (inp =="add"){
     console.log(Push(arr,top))
 }
