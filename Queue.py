@@ -17,7 +17,7 @@ Q = Queue()
 Q.Enqueue("Shakil")
 Q.Enqueue("Sajjad")
 
-
-while not Q.is_empty():
-    p = Q.Dequeue()
-    print(p)
+print(Q.arr)
+# while not Q.is_empty():
+#     p = Q.Dequeue()
+#     print(p)
