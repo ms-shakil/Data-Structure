@@ -26,6 +26,29 @@ class DoublyLinkedList:
         self.head.prev = new_node
         self.head = new_node
         
+    def Delete(self,value):    
+        hd = self.head
+        while hd is not None:
+            if hd.data == value:
+                if hd.prev is None:
+                    self.head =hd.next
+                    self.size -=1
+                else:
+                    hd.prev.next = hd.next
+                    self.size -=1
+                if hd.next is None:
+                    self.tail = hd.prev
+                    self.size-=1
+                    
+                else:    
+                    hd.next.prev = hd.prev
+                
+           
+                
+                   
+            hd = hd.next  
+                
+        
     def __str__(self):
         arr =[]
         hd = self.head
@@ -40,8 +63,14 @@ D.Add("Shakil")
 D.Add("Main")
 D.Add("payer") 
 D.Add("Sajjad")     
-D.Add("Fahad")         
-D.Prepend("asif") 
-D.Prepend("noyon")
 
+
+print(D)
+
+
+D.Delete("Shakil")
+D.Delete("payer")
+
+D.Delete("Sajjad")
+print(D.size)
 print(D)
