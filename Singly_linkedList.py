@@ -7,21 +7,28 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
-
+        
+##### Inserting Items at the End   
+    
     def insert(self,data):
         node = Node(data)
         if self.head is None:
             self.head = node
-
             return
         current_node = self.head
         while current_node.next is not None:
             current_node = current_node.next
-        current_node.next = node 
+        current_node.next = node
+ 
+##### Inserting Items in starting 
+         
     def Prepend(self,data):
         node = Node(data)
         node.next = self.head
-        self.head = node            
+        self.head = node
+
+#### search items
+                    
     def search(self,item):
         hd = self.head
         while hd is not None:
@@ -29,6 +36,8 @@ class LinkedList:
             return item
             hd = hd.next
         return "don't get data" 
+
+####### Inserting item after item
 
     def insert_after_item(self,new_data,old_data):
         hd = self.head 
@@ -42,7 +51,7 @@ class LinkedList:
         else:
             new_node = Node(new_data)
             new_node.next = hd.next
-            hd.next = new_node                
+            hd.next = new_node        
 
     def __str__(self):
         list_ =[]
@@ -59,8 +68,10 @@ L =LinkedList()
 L.insert("Shakil")
 L.insert("main")
 L.insert("Payer")
+L.insert("Jilan")
 L.Prepend("Sajjad")
 L.Prepend("Fahad")
+L.prepend ("Noyon")
 print(L.search("Payer"))
 print(L)
 L.insert_after_item("Asif", "Sajjad")

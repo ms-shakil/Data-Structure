@@ -1,3 +1,4 @@
+### Doubly linked list
 class Node:
     def __init__(self,data):
         self.data = data
@@ -9,7 +10,9 @@ class DoublyLinkedList:
         self.head = None
         self.size = 0
         self.tail = None
-##### Inserting Items at the End        
+        
+##### Inserting Items at the End       
+ 
     def Add(self,value):
         new_node =Node(value)
         if self.head is None:
@@ -21,13 +24,17 @@ class DoublyLinkedList:
             new_node.prev = self.tail
             self.tail = new_node
             self.size +=1
-####### Inserting Items at the started            
+            
+####### Inserting Items at the started    
+        
     def Prepend(self,value):
         new_node = Node(value)        
         new_node.next =self.head
         self.head.prev = new_node
         self.head = new_node
+        
 ####### Insertign item after the value
+
     def Add_After_newValue(self,old,new):
         new_node = Node(new)     
         hd = self.head
@@ -39,7 +46,8 @@ class DoublyLinkedList:
                 new_node.prev = hd
             hd =hd.next
         
-### Delete item        
+### Delete item       
+ 
     def Delete(self,value):    
         hd = self.head
         while hd is not None:
@@ -52,13 +60,14 @@ class DoublyLinkedList:
                     self.size -=1
                 if hd.next is None:
                     self.tail = hd.prev
-                    self.size-=1
-                    
+                    self.size-=1  
                 else:    
                     hd.next.prev = hd.prev
                     self.size -=1
             hd = hd.next  
- ######## search items           
+            
+ ######## search items  
+          
     def Search(self,value) :
         hd = self.head
         while hd is not None:
@@ -85,9 +94,9 @@ D.Add("Sajjad")
 print("first print",D)
 
 
-# D.Delete("Shakil")
+D.Delete("Shakil")
 
-# print(D.size)
-# print(D)
+print(D.size)
+print(D)
 D.Add_After_newValue("payer","fahad")
 print(D)
