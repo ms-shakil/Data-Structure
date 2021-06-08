@@ -32,6 +32,7 @@ class DoublyLinkedList:
         new_node.next =self.head
         self.head.prev = new_node
         self.head = new_node
+        self.size +=1
         
 ####### Insertign item after the value
 
@@ -44,6 +45,7 @@ class DoublyLinkedList:
                 hd.next.prev = new_node
                 hd.next = new_node
                 new_node.prev = hd
+                self.size +=1
             hd =hd.next
         
 ### Delete item       
