@@ -56,19 +56,39 @@ class DoublyLinkedList:
             if hd.data == value:
                 if hd.prev is None:
                     self.head =hd.next
-                    self.size -=1
+                    
                 else:
                     hd.prev.next = hd.next
-                    self.size -=1
+                  
                 if hd.next is None:
                     self.tail = hd.prev
-                    self.size-=1  
+                    
                 else:    
                     hd.next.prev = hd.prev
-                    self.size -=1
+                self.size -=1   
             hd = hd.next  
+     ### Delete last node
+    def Delete_LastNode(self):
+        if self.tail.prev is None:
+            self.tail = None
+            self.head = None
+            self.size -=1
+            return
+        if self.tail is not None:
+            self.tail = self.tail.prev
+            self.tail.next = None
+            self.size -=1   
             
- ######## search items  
+    def Delete_FirstNode(self): 
+        if self.head.next is None:
+            self.head = None
+            self.tail  = None
+            self.size  -=1
+        if self.head is not None:
+            self.head = self.head.next
+            self.head.prev = None  
+            self.size -=1         
+ ######## search items 
           
     def Search(self,value) :
         hd = self.head
@@ -91,14 +111,9 @@ D.Add("Shakil")
 D.Add("Main")
 D.Add("payer") 
 D.Add("Sajjad")     
-
-
-print("first print",D)
-
-
-D.Delete("Shakil")
-
+D.Delete_LastNode()
+D.Delete_LastNode()
+D.Delete_LastNode()
+D.Delete_LastNode()
+print(D)
 print(D.size)
-print(D)
-D.Add_After_newValue("payer","fahad")
-print(D)
