@@ -78,6 +78,7 @@ class DoublyLinkedList:
             self.tail = self.tail.prev
             self.tail.next = None
             self.size -=1   
+    #### delete first node
             
     def Delete_FirstNode(self): 
         if self.head.next is None:
@@ -111,9 +112,5 @@ D.Add("Shakil")
 D.Add("Main")
 D.Add("payer") 
 D.Add("Sajjad")     
-D.Delete_LastNode()
-D.Delete_LastNode()
-D.Delete_LastNode()
-D.Delete_LastNode()
 print(D)
 print(D.size)
